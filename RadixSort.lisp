@@ -1,24 +1,14 @@
 (defvar cola '())
 (defvar lista-colas (list (list) (list) (list) (list) (list) (list) (list) (list) (list) (list) (list) (list) (list) (list) (list) (list) (list) (list) (list) (list)))
 
-(push 21 cola)
-(push 35 cola)
-(push 42 cola)
-(push 1 cola)
-(push 2 cola)
-(push 14 cola)
-(push 143 cola)
-(push 21 cola)
 
-
-
-(defun RADIX-Sort (multiplicador)
+(defun RADIX-Sort (cola multiplicador)
     (if (< multiplicador 100000)
         (progn
             (mapcar #'(lambda (x) (llenar-lista-colar x multiplicador)) cola)
             (mapcar #'llenar-colas lista-colas)
             (setq lista-colas (list (list) (list) (list) (list) (list) (list) (list) (list) (list) (list) (list) (list) (list) (list) (list) (list) (list) (list) (list) (list)))
-            (radix-sort (* multiplicador 10))
+            (radix-sort cola (* multiplicador 10))
         )
         (print (reverse cola))
     )
@@ -41,8 +31,11 @@
     )
 )
 
-(print cola)
-(radix-sort 1)
+(defun llamar-radix-sort (list)
+    (radix-sort list 1)
+)
+
+(llamar-radix-sort '(1 2 4 9 3))
 
 
 
