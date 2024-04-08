@@ -35,7 +35,7 @@
     (radix-sort list 1)
 )
 
-(llamar-radix-sort '(1 2 4 9 3))
+(llamar-radix-sort '(87 96 1 587 5624 956))
 
 
 
