@@ -9,11 +9,14 @@
 
 
 (defun RADIX-Sort (multiplicador)
-    (if (null cola)
-        (print "doing");llama a la función para reordenar la cola
-        (push (car cola)
-            (nth (funcall (lambda (x) (+ (mod (/ x multiplicador) 10) 0)) (car cola)) lista-colas)
+    (if (< multiplicador 100)
+        (progn
+            (mapcar #'(lambda (x) (llenar-lista-colar x multiplicador)) cola)
+            (mapcar #'llenar-colas lista-colas)
+            (print "vuelta")
+            (radix-sort (* 10 multiplicador))
         )
+        (print "Fin")
     )
 )
 
@@ -26,7 +29,7 @@
 
 (defun llenar-colas (lista)
     (if (null lista)
-        (return-from llenar-colas 0)
+        (pop lista-colas)
         (progn 
             (push (car lista) cola)
             (llenar-colas (cdr lista))
@@ -35,12 +38,8 @@
 )
 
 (print cola)
-(mapcar #'(lambda (x) (llenar-lista-colar x 1)) cola)
-(mapcar #'llenar-colas lista-colas)
-(print lista-colas)
-(print cola)
+(radix-sort 1)
 (print (reverse cola))
-
 
 
 
