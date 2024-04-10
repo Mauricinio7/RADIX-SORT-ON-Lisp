@@ -33,7 +33,6 @@
     (if (null lista)
         (pop lista-colas)
         (progn 
-            (print "Un positivo")
             (push (car lista) cola)
             (llenar-colas (cdr lista))
         )
@@ -44,9 +43,8 @@
     (if (null lista)
         (pop lista-colas-neg)
         (progn 
-        (print "Un negativo")
             (push (car lista) cola)
-            (llenar-colas-neg (cdr lista))
+            (llenar-colas-neg (cdr lista)) 
         )
     )
 )
@@ -56,10 +54,25 @@
     (radix-sort list 1)
 )
 
-(llamar-radix-sort '(1 -1 -10 9 1879 -8923 -23 0 -18 7823))
+(llamar-radix-sort '(1 2 3 4 5))
+(llamar-radix-sort '(5 4 3 2 1))
+(llamar-radix-sort '())
+(llamar-radix-sort '(5))
+(llamar-radix-sort '(1 10 100 1000))
+(llamar-radix-sort '(9 89 789 6789))
+(llamar-radix-sort '(6789 789 89 9))
+(llamar-radix-sort '(0 0 0 0))
+(llamar-radix-sort '(1 20 300 4000))
+(llamar-radix-sort '(4000 300 20 1))
+(llamar-radix-sort '(1 1 1 1 1))
+(llamar-radix-sort '(00001 0002 03 004))
+(llamar-radix-sort '(9999 1))
+(llamar-radix-sort '(5 12 8 1 98 76 6 2))
+(llamar-radix-sort '(-1 2 -10 -78 65 -9))
+(llamar-radix-sort '(-1 2 -10 -78 65 -9 0))
 
 
 
 
 ;Solución: Crear una cola con 20 colar, llenar esas 20 colas y reordenar
-;Esta listo al 100% :D
+;Esta listo al 100% :D  
